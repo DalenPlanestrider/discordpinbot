@@ -23,7 +23,9 @@ async def processCommand(msg):
             await msg.guild.get_member(botclient.user.id).edit(nick=tokens[1])
             await msg.channel.send("Thanks for the name!")
     elif msg.content.startswith("!help"):
-        await msg.channel.send("Reply to a message with !pin to pin it, and use !name [something] to set my name")
+        await msg.channel.send("Reply to a message with !pin to pin it, use !name [something] to set my name, or use !bot to see my code repository!")
+    elif msg.content.startswith("!bot"):
+        await msg.channel.send("Bot code repository is here: https://github.com/DalenPlanestrider/discordpinbot")
     else:
         tokens = msg.content.split(" ")
         await msg.channel.send("Unrecognized command: " + tokens[0])

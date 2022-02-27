@@ -24,9 +24,9 @@ async def processCommand(msg):
             await msg.channel.send("Thanks for the name!")
     elif msg.content.startswith("!help"):
         await msg.channel.send(
-                """Commands:\n
-                !pin & !unpin - use while replying to a message to pin or unpin the reply\n
-                !name [something] - to set my name\n
+                """Commands:
+                !pin & !unpin - use while replying to a message to pin or unpin the reply
+                !name [something] - to set my name
                 !bot - to get the link to my code repo"""
                 )
     elif msg.content.startswith("!bot"):

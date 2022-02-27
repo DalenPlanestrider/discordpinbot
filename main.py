@@ -26,6 +26,13 @@ async def processCommand(msg):
         await msg.channel.send("Reply to a message with !pin to pin it, use !name [something] to set my name, or use !bot to see my code repository!")
     elif msg.content.startswith("!bot"):
         await msg.channel.send("Bot code repository is here: https://github.com/DalenPlanestrider/discordpinbot")
+    elif msg.content.startswith("!unpin"):
+        if msg.reference is None:
+            await msg.channel.send("Not a reply, no message to pin!")
+        else:
+            repl = await msg.channel.fetch_message(msg.reference.message_id)
+            if repl is not None:
+                await repl.unpin()
     else:
         tokens = msg.content.split(" ")
         await msg.channel.send("Unrecognized command: " + tokens[0])

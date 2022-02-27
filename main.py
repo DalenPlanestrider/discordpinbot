@@ -23,7 +23,12 @@ async def processCommand(msg):
             await msg.guild.get_member(botclient.user.id).edit(nick=tokens[1])
             await msg.channel.send("Thanks for the name!")
     elif msg.content.startswith("!help"):
-        await msg.channel.send("Reply to a message with !pin to pin it, use !name [something] to set my name, or use !bot to see my code repository!")
+        await msg.channel.send(
+                "Commands:\n
+                !pin & !unpin - use while replying to a message to pin or unpin the reply\n
+                !name [something] - to set my name\n
+                !bot - to get the link to my code repo"
+                )
     elif msg.content.startswith("!bot"):
         await msg.channel.send("Bot code repository is here: https://github.com/DalenPlanestrider/discordpinbot")
     elif msg.content.startswith("!unpin"):
